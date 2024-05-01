@@ -120,6 +120,14 @@ in
             Warning: This allow to run arbitrary commands, as the rtorrent user, so make sure to use authentication. The simplest way would be to use the {option}`services.nginx.virtualHosts.<name>.basicAuth` option.
           '';
         };
+
+        extraConfig = mkOption {
+          type = types.lines;
+          default = "";
+          description = lib.mdDoc ''
+            These lines go to the end of the vhost verbatim.
+          '';
+        };
       };
     };
   };
@@ -303,6 +311,7 @@ in
             enable = true;
             virtualHosts = {
               ${cfg.hostName} = {
+                extraConfig = cfg.nginx.extraConfig;
                 root = cfg.dataDir;
                 locations = {
                   "~ [^/]\\.php(/|$)" = {
