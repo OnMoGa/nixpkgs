@@ -61,7 +61,8 @@ in {
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/surreal start --bind ${cfg.host}:${toString cfg.port} ${lib.strings.concatStringsSep " " cfg.extraFlags} -- ${cfg.dbPath}";
-        DynamicUser = true;
+        User = "surrealdb";
+        Group = "surrealdb";
         Restart = "on-failure";
         StateDirectory = "surrealdb";
         CapabilityBoundingSet = "";
