@@ -10403,6 +10403,8 @@ self: super: with self; {
 
   magic = callPackage ../development/python-modules/magic { };
 
+  magicattr = callPackage ../development/python-modules/magicattr { };
+
   magic-filter = callPackage ../development/python-modules/magic-filter { };
 
   magic-wormhole = callPackage ../development/python-modules/magic-wormhole { };
