@@ -11,9 +11,10 @@ buildHomeAssistantComponent rec {
   domain = "ge_home";
   version = "2026.6.0";
 
+  # use `nix store prefetch-file "https://github.com/simbaja/ha_gehome/archive/refs/tags/v2026.6.0.tar.gz"` to get the hash
   src = fetchurl {
     url = "https://github.com/${owner}/ha_gehome/archive/refs/tags/v${version}.tar.gz";
-    hash = "sha256-p34yBtoqAMVCiAZKyxWPTVOSjPaueD1sb5ZEzWF2OZ4=";
+    hash = "sha256-KKHDaQRYNHAN4e8kwRI8sRMyfbrBopBmVG3FHobHUE=";
   };
 
   sourceRoot = "ha_gehome-${version}";
