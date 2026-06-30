@@ -9,7 +9,7 @@
 buildHomeAssistantComponent rec {
   owner = "simbaja";
   domain = "ge_home";
-  version = "2026.2.0";
+  version = "2026.6.0";
 
   src = fetchurl {
     url = "https://github.com/${owner}/ha_gehome/archive/refs/tags/v${version}.tar.gz";
